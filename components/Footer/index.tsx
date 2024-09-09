@@ -378,7 +378,7 @@ const Footer = () => {
                 <div className="flex flex-col items-center justify-between gap-2 md:flex-row md:gap-0">
                   <p>
                     &copy; {new Date().getFullYear()} My Dawai Wala. Unit of
-                    SwiftMeds Pharma. All rights reserved
+                    SwiftMeds Pharma. All rights reserved.
                   </p>
                   <div className="animate_top mb-3 mt-3">
                     <ul className="flex items-center gap-5">

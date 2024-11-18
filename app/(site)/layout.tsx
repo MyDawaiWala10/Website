@@ -25,7 +25,7 @@ export default function RootLayout({
           name="description"
           content="Welcome to My Dawai Wala, one stop to all your medicine needs"
         />
-        <link rel="icon" href="/images/favicon1.svg" />
+        <link rel="icon" href="/images/favicon.svg" />
       </head>
       <body className={`dark:bg-black ${inter.className}`}>
         <ThemeProvider

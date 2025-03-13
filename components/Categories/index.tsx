@@ -31,7 +31,7 @@ const Feature = () => {
             {/* <!-- Features item End --> */}
           </div>
           <div className="flex items-center justify-center">
-            <a href="https://wa.link/hvablf">
+            <a href="https://wa.link/oprl2e">
             <button className="inline-flex items-center justify-center gap-5 rounded-full bg-zumthor px-20 py-4 dark:border dark:border-strokedark dark:bg-blacksection">
               <span className="text-xl font-medium text-black dark:text-white">
                 ORDER NOW

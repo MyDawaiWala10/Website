@@ -175,7 +175,7 @@ const Header = () => {
 
           <div className="mt-7 flex items-center justify-center gap-6 xl:mt-0">
             {/* <ThemeToggler /> */}
-            <a href="https://wa.link/hvablf">
+            <a href="https://wa.link/oprl2e">
               <button className="inline-flex items-center justify-center gap-2 rounded-full bg-[#12a701] px-5 py-2 dark:border">
                 <span className="text-sm font-medium text-white dark:text-white">
                   Order now

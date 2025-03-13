@@ -54,14 +54,14 @@ const Footer = () => {
                           Elder Care
                         </a>
                       </li>
-                      <li>
+                      {/* <li>
                         <a
                           href="#"
                           className="mb-3 inline-block hover:text-primary"
                         >
                           Ayurvedic Care
                         </a>
-                      </li>
+                      </li> */}
                       <li>
                         <a
                           href="#"
@@ -84,6 +84,14 @@ const Footer = () => {
                           className="mb-3 inline-block hover:text-primary"
                         >
                           Mother Care
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="mb-3 inline-block hover:text-primary"
+                        >
+                          Multivitamins
                         </a>
                       </li>
                     </ul>
@@ -133,19 +141,11 @@ const Footer = () => {
                           href="#"
                           className="mb-3 inline-block hover:text-primary"
                         >
-                          Multivitamins
+                          Accessories & Wearables
                         </a>
                       </li>
                     </ul>
                     <ul>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Accessories & Wearables
-                        </a>
-                      </li>
                       <li>
                         <a
                           href="#"
@@ -525,7 +525,7 @@ const Footer = () => {
                 viewport={{ once: true }}
                 className="animate_top"
               >
-                <p>Built & Managed by SIDA Technologies</p>
+                <p>Built & Managed by <a href="https://sidahq.com" target="_blank" rel="noopener noreferrer">SIDA Technologies</a></p>
               </motion.div>
             </div>
           </div>

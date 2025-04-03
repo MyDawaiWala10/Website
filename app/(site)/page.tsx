@@ -14,6 +14,7 @@ import Contact from "@/components/Contact";
 import Blog from "@/components/Blog";
 import Testimonial from "@/components/Testimonial";
 import Imagecarousel from "@/components/Crousel";
+import CalendarWidget from "@/components/CalendarWidget";
 
 export const metadata: Metadata = {
   title: "My DawaiWala",
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
+      <CalendarWidget />
       {/* <Hero /> */}
       <Imagecarousel />
       <Brands />

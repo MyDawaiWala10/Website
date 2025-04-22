@@ -78,7 +78,7 @@ delivery)</li></a>
                     &copy; {new Date().getFullYear()} My Dawai Wala. Unit of
                     SwiftMeds Pharma. All rights reserved.
                   </p>
-                  <div className="animate_top mb-3 mt-3">
+                  {/* <div className="animate_top mb-3 mt-3">
                     <ul className="flex items-center gap-5">
                       <li>
                         <a
@@ -200,7 +200,7 @@ delivery)</li></a>
                         </a>
                       </li>
                     </ul>
-                  </div>
+                  </div> */}
                 </div>
               </motion.div>
             </div>

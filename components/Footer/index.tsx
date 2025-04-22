@@ -11,344 +11,42 @@ const Footer = () => {
           {/* <!-- Footer Top --> */}
           <div className="pt-10">
             <div className="flex flex-col gap-8">
-              <div className="flex flex-col gap-15 md:flex-row lg:gap-40">
-                <motion.div
-                  variants={{
-                    hidden: {
-                      opacity: 0,
-                      y: -20,
-                    },
-
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                    },
-                  }}
-                  initial="hidden"
-                  whileInView="visible"
-                  transition={{ duration: 1, delay: 0.1 }}
-                  viewport={{ once: true }}
-                  className="animate_top"
-                >
-                  <div className="mb-9 flex items-center justify-start gap-8">
-                    <h4 className=" text-itemtitle2 font-medium text-black">
-                      Categories
-                    </h4>
-                  </div>
-
-                  <div className="flex flex-col items-start justify-between text-sm md:flex-row md:gap-25">
-                    <ul>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Personal Care
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Elder Care
-                        </a>
-                      </li>
-                      {/* <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Ayurvedic Care
-                        </a>
-                      </li> */}
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Women Care
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Diabetic Care
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Mother Care
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Multivitamins
-                        </a>
-                      </li>
-                    </ul>
-                    <ul>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Baby Care
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Home Care
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Skin Care
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Health and Devices
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Sexual Wellness
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Accessories & Wearables
-                        </a>
-                      </li>
-                    </ul>
-                    <ul>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Glucometers and Test strips
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Health food & Drinks
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Nutritional Drinks for kids
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Pain relief
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  variants={{
-                    hidden: {
-                      opacity: 0,
-                      y: -20,
-                    },
-
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                    },
-                  }}
-                  initial="hidden"
-                  whileInView="visible"
-                  transition={{ duration: 1, delay: 0.1 }}
-                  viewport={{ once: true }}
-                  className="animate_top"
-                >
-                  <h4 className="mb-9 text-itemtitle2 font-medium text-black dark:text-white">
-                    Useful Links
-                  </h4>
-
-                  <div className="flex flex-col items-start justify-start text-sm md:flex-row md:gap-20">
-                    <ul>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          About
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Career
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Blog
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Press
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="/grievancepolicy"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Lead
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Value
-                        </a>
-                      </li>
-                    </ul>
-                    <ul>
-                      <li>
-                        <a
-                          href="/privacypolicy"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Privacy
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="/termsandconditions"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Terms
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          FAQs
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Security
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Mobile
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Contact
-                        </a>
-                      </li>
-                    </ul>
-                    <ul>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Partner
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Express
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Seller
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Warehouse
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="/refundpolicy"
-                          className="mb-3 inline-block hover:text-primary"
-                        >
-                          Deliver
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </motion.div>
+              <div className="w-full flex flex-col gap-15 md:flex-row lg:gap-40 mx-auto">
+                <div className="w-full flex flex-col gap-2 justify-start items-start">
+                  <p className="text-white font-bold text-2xl underline">Know Us</p>
+                  <ul>
+                    <a href="/"><li className="list-disc list-inside">About MDW</li></a>
+                    <a href="/"><li className="list-disc list-inside">Contact Support</li></a>
+                    <a href="/"><li className="list-disc list-inside">Career</li></a>
+                    <a href="/"><li className="list-disc list-inside">FAQ's</li></a>
+                  </ul>
+                </div>
+                <div className="w-full flex flex-col gap-2 justify-start items-start">
+                  <p className="text-white font-bold text-2xl underline">Our Policies</p>
+                  <ul>
+                    <a href="/"><li className="list-disc list-inside">Terms n Condition</li></a>
+                    <a href="/"><li className="list-disc list-inside">Privacy</li></a>
+                    <a href="/"><li className="list-disc list-inside">Return n Refund</li></a>
+                    <a href="/"><li className="list-disc list-inside">Grievance</li></a>
+                  </ul>
+                </div>
+                <div className="w-full flex flex-col gap-2 justify-start items-start">
+                  <p className="text-white font-bold text-2xl underline">Our Services</p>
+                  <ul>
+                    <a href="/"><li className="list-disc list-inside">Medicine(Live) (20min
+delivery)</li></a>
+                  </ul>
+                </div>
+                <div className="w-full flex flex-col gap-2 justify-start items-start">
+                  <p className="text-white font-bold text-2xl underline">Social Media</p>
+                  <ul>
+                    <a href="/"><li className="list-disc list-inside">Facebook</li></a>
+                    <a href="/"><li className="list-disc list-inside">Instagram</li></a>
+                    <a href="/"><li className="list-disc list-inside">Youtube</li></a>
+                    <a href="/"><li className="list-disc list-inside">X</li></a>
+                    <a href="/"><li className="list-disc list-inside">Medial</li></a>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

@@ -6,14 +6,14 @@ import { useState } from "react";
 const Footer = () => {
   return (
     <>
-      <footer className="border-t border-stroke bg-green-50 dark:border-strokedark dark:bg-blacksection">
+      <footer className="border-t border-stroke bg-white dark:border-strokedark dark:bg-blacksection">
         <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
           {/* <!-- Footer Top --> */}
           <div className="pt-10">
             <div className="flex flex-col gap-8">
               <div className="w-full flex flex-col gap-15 md:flex-row lg:gap-40 mx-auto">
                 <div className="w-full flex flex-col gap-2 justify-start items-start">
-                  <p className="text-white font-bold text-2xl underline">Know Us</p>
+                  <p className="text-black font-bold text-2xl ">Know Us</p>
                   <ul>
                     <a href="/"><li className="list-disc list-inside">About MDW</li></a>
                     <a href="/"><li className="list-disc list-inside">Contact Support</li></a>
@@ -22,7 +22,7 @@ const Footer = () => {
                   </ul>
                 </div>
                 <div className="w-full flex flex-col gap-2 justify-start items-start">
-                  <p className="text-white font-bold text-2xl underline">Our Policies</p>
+                  <p className="text-black font-bold text-2xl ">Our Policies</p>
                   <ul>
                     <a href="/"><li className="list-disc list-inside">Terms n Condition</li></a>
                     <a href="/"><li className="list-disc list-inside">Privacy</li></a>
@@ -31,20 +31,20 @@ const Footer = () => {
                   </ul>
                 </div>
                 <div className="w-full flex flex-col gap-2 justify-start items-start">
-                  <p className="text-white font-bold text-2xl underline">Our Services</p>
+                  <p className="text-black font-bold text-2xl ">Our Services</p>
                   <ul>
                     <a href="/"><li className="list-disc list-inside">Medicine(Live) (20min
 delivery)</li></a>
                   </ul>
                 </div>
                 <div className="w-full flex flex-col gap-2 justify-start items-start">
-                  <p className="text-white font-bold text-2xl underline">Social Media</p>
+                  <p className="text-black font-bold text-2xl ">Social Media</p>
                   <ul>
                     <a href="/"><li className="list-disc list-inside">Facebook</li></a>
                     <a href="/"><li className="list-disc list-inside">Instagram</li></a>
                     <a href="/"><li className="list-disc list-inside">Youtube</li></a>
                     <a href="/"><li className="list-disc list-inside">X</li></a>
-                    <a href="/"><li className="list-disc list-inside">Medial</li></a>
+                    {/* <a href="/"><li className="list-disc list-inside">Medial</li></a> */}
                   </ul>
                 </div>
               </div>

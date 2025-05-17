@@ -13,6 +13,7 @@ module.exports = {
   theme: {
     fontFamily: {
       inter: ["Inter", "sans-serif"],
+      bricolage: ['Bricolage Grotesque Variable', 'sans-serif'],
     },
     extend: {
       colors: {

@@ -19,6 +19,8 @@
   @apply opacity-100;
 }
 
+
+
 @layer base {
   body {
     @apply relative z-1 font-inter text-regular font-normal text-waterloo dark:text-manatee;

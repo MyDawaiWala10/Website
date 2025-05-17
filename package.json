@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource-variable/bricolage-grotesque": "^5.2.7",
     "@splidejs/react-splide": "^0.7.12",
     "@types/bcrypt": "^5.0.1",
     "@types/node": "^20.8.9",

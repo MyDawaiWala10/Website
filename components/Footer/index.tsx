@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="pt-10">
             <div className="flex flex-col gap-8">
               <div className="w-full flex flex-col gap-15 md:flex-row lg:gap-40 mx-auto">
-                <div className="w-full flex flex-col gap-2 justify-start items-start">
+                <div className="w-full flex flex-col gap-2 justify-start items-start mb-4">
                   <p className="text-black font-bold text-2xl ">Know Us</p>
                   <ul>
                     <a href="/"><li className="list-disc list-inside">About MDW</li></a>
@@ -35,6 +35,7 @@ const Footer = () => {
                   <ul>
                     <a href="/"><li className="list-disc list-inside">Medicine(Live) (20min
 delivery)</li></a>
+                    <a href="/"><li className="list-disc list-inside">Therapy</li></a>
                   </ul>
                 </div>
                 <div className="w-full flex flex-col gap-2 justify-start items-start">

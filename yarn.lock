@@ -63,6 +63,11 @@
   resolved "https://registry.npmjs.org/@eslint/js/-/js-8.41.0.tgz"
   integrity sha512-LxcyMGxwmTh2lY9FwHPGWOHmYFCZvbrFCBZL4FzSSsxsRPuhrYUg/49/0KDfW8tnIEaEHtfmn6+NPN+1DqaNmA==
 
+"@fontsource-variable/bricolage-grotesque@^5.2.7":
+  version "5.2.7"
+  resolved "https://registry.npmjs.org/@fontsource-variable/bricolage-grotesque/-/bricolage-grotesque-5.2.7.tgz"
+  integrity sha512-9HZ2SulWCN2ORb0gNkOtSq6o/XG0t9Bq0OAm2gWd+RlVtwe+Lxy/WL1QQ8O890ZsP9768s41HJZsLRowhoj6uA==
+
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.10"
   resolved "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.11.10.tgz"

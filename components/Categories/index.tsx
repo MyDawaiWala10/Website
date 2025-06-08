@@ -52,9 +52,8 @@ const Feature = () => {
             </div>
             
             {/* Right Card */}
-            <div className="md:w-[40%] group h-[300px] [perspective:1000px] ">
+            {/* <div className="md:w-[40%] group h-[300px] [perspective:1000px] ">
               <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                {/* Front Side */}
                 <div className="absolute inset-0 h-full w-full rounded-xl bg-black text-white p-8 [backface-visibility:hidden]">
                   <div className="flex flex-col h-full w-full items-start justify-start">
                       <h2 className="text-3xl font-bold mb-4 font-bricolage tracking-tight">MDW Wellness</h2>
@@ -66,7 +65,6 @@ const Feature = () => {
                   </div>
                 </div>
                 
-                {/* Back Side */}
                 <div className="absolute inset-0 h-full w-full rounded-xl bg-black text-white p-6 [backface-visibility:hidden] [transform:rotateY(180deg)] relative">
                   <div className="flex flex-col h-full w-full items-center justify-center">
                     <div className="w-64 h-64">
@@ -75,7 +73,7 @@ const Feature = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
           
           <div className="flex items-center justify-center mt-10">

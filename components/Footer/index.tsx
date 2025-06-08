@@ -24,10 +24,10 @@ const Footer = () => {
                 <div className="w-full flex flex-col gap-2 justify-start items-start">
                   <p className="text-black font-bold text-2xl ">Our Policies</p>
                   <ul>
-                    <a href="/"><li className="list-disc list-inside">Terms n Condition</li></a>
-                    <a href="/"><li className="list-disc list-inside">Privacy</li></a>
-                    <a href="/"><li className="list-disc list-inside">Return n Refund</li></a>
-                    <a href="/"><li className="list-disc list-inside">Grievance</li></a>
+                    <a href="https://3vra7mgrlh.ufs.sh/f/b8iVQa6UTCDiMgQPmND92nZDo7HtUT0dlfEX6cKivBQugrIV"><li className="list-disc list-inside">Terms and Conditions</li></a>
+                    <a href="https://3vra7mgrlh.ufs.sh/f/b8iVQa6UTCDiFlPfXEXOb5lZowegLCc8WV1fuTQXmABUhvNE"><li className="list-disc list-inside">Privacy Policy</li></a>
+                    <a href="https://3vra7mgrlh.ufs.sh/f/b8iVQa6UTCDisTXmomYxqc9mNtk4Fg6jYTEd7b2yOPUKzZQH"><li className="list-disc list-inside">Return and Refund Policy</li></a>
+                    <a href="https://3vra7mgrlh.ufs.sh/f/b8iVQa6UTCDi2DxfDp6sdKv1pxqDjelWktboUiXHuRJ09IEF"><li className="list-disc list-inside">Grievance Redressal</li></a>
                   </ul>
                 </div>
                 <div className="w-full flex flex-col gap-2 justify-start items-start">
@@ -35,7 +35,7 @@ const Footer = () => {
                   <ul>
                     <a href="/"><li className="list-disc list-inside">Medicine(Live) (20min
 delivery)</li></a>
-                    <a href="/"><li className="list-disc list-inside">Therapy</li></a>
+                    {/* <a href="/"><li className="list-disc list-inside">Therapy</li></a> */}
                   </ul>
                 </div>
                 <div className="w-full flex flex-col gap-2 justify-start items-start">

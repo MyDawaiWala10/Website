@@ -56,7 +56,7 @@ const index = () => {
             </div>
             <div className="ml-6 lg:ml-0 lg:mt-10">
               <h3 className="before:font-mono text-xl font-bold text-gray-900 before:mb-2 before:block before:text-sm before:text-gray-500">
-                Select category
+                Visit our website.
               </h3>
               <h4 className="mt-2 text-base text-gray-700">
                 Scan the QR code/use our WhatsApp number/visit our website.
@@ -100,7 +100,7 @@ const index = () => {
             </div>
             <div className="ml-6 lg:ml-0 lg:mt-10">
               <h3 className="before:font-mono text-xl font-bold text-gray-900 before:mb-2 before:block before:text-sm before:text-gray-500">
-              Choose how you want to order
+              Either upload your prescription or talk to our pharmacist.
               </h3>
               <h4 className="mt-2 text-base text-gray-700">
               Upload your prescription/send the medicine name/talk to our pharmacist 
@@ -171,7 +171,7 @@ const index = () => {
             </div>
             <div className="ml-6 lg:ml-0 lg:mt-10">
               <h3 className="before:font-mono text-xl font-bold text-gray-900 before:mb-2 before:block before:text-sm before:text-gray-500">
-                Place your order
+                Your order has been placed.
               </h3>
               <h4 className="mt-2 text-base text-gray-700">
                 That's it. It's this easy to order medicines from MyDawaiWala.

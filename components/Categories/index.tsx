@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import SectionHeader from "../Common/SectionHeader";
 import categoriesData from "./categoriesData";
 
-import '@fontsource-variable/bricolage-grotesque';
+import "@fontsource-variable/bricolage-grotesque";
+import FlipCard from "./flip-card";
 
 const Feature = () => {
   const leftCategories = categoriesData.slice(0, 8);
@@ -21,36 +22,15 @@ const Feature = () => {
             }}
           />
           <p className="mb-5 mt-12.5 text-center text-base font-bold tracking-widest text-gray-700 lg:mt-15 xl:mt-20">
-            Select by category
+            {/* Select by category */}
           </p>
-          
-          <div className="flex flex-col md:flex-row gap-6 justify-center">
+
+          <div className="flex flex-col justify-center gap-6 md:flex-row">
             {/* Left Card */}
-            <div className="md:w-[40%] group h-[300px] [perspective:1000px] ">
-              <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                {/* Front Side */}
-                <div className="absolute inset-0 h-full w-full rounded-xl bg-red-600 text-white p-8 [backface-visibility:hidden]">
-                  <div className="flex flex-col h-full w-full items-start justify-start">
-                      <h2 className="text-3xl font-bold mb-4 font-bricolage tracking-tight">MDW Medicine</h2>
-                      <p className="text-base mb-4 font-semibold">20mins Medicine Delivery</p>
-                      <ul className="list-disc pl-5">
-                        <li className="mb-2">Prescription medications & OTC drugs</li>
-                        <li>Fast delivery for urgent medical needs</li>
-                      </ul>
-                  </div>
-                </div>
-                
-                {/* Back Side */}
-                <div className="absolute inset-0 h-full w-full rounded-xl bg-red-600 text-white p-6 [backface-visibility:hidden] [transform:rotateY(180deg)] relative">
-                  <div className="flex flex-col h-full w-full items-center justify-center">
-                    <div className="w-64 h-64">
-                      <img src="/images/icon/medicine.svg" alt="MDW Medicines" className="w-full h-full" />
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="group h-[300px] [perspective:1000px] md:w-[40%] ">
+              <FlipCard />
             </div>
-            
+
             {/* Right Card */}
             {/* <div className="md:w-[40%] group h-[300px] [perspective:1000px] ">
               <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
@@ -75,8 +55,8 @@ const Feature = () => {
               </div>
             </div> */}
           </div>
-          
-          <div className="flex items-center justify-center mt-10">
+
+          <div className="mt-10 flex items-center justify-center">
             <a href="https://wa.link/oprl2e">
               <button className="inline-flex items-center justify-center gap-5 rounded-full bg-zumthor px-20 py-4 dark:border dark:border-strokedark dark:bg-blacksection">
                 <span className="text-xl font-medium text-black dark:text-white">

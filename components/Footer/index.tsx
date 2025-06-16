@@ -15,39 +15,43 @@ const Footer = () => {
                 <div className="w-full flex flex-col gap-2 justify-start items-start mb-4">
                   <p className="text-black font-bold text-2xl ">Know Us</p>
                   <ul>
-                    <a href="/"><li className="list-disc list-inside">About MDW</li></a>
-                    <a href="/"><li className="list-disc list-inside">Contact Support</li></a>
-                    <a href="/"><li className="list-disc list-inside">Career</li></a>
-                    <a href="/"><li className="list-disc list-inside">FAQ's</li></a>
+                    <a href=" https://3vra7mgrlh.ufs.sh/f/b8iVQa6UTCDi8oQXVTZOVGCg5KJP9WjrtL6slfcH71hx0UEB"><li className="list-disc list-inside">About MDW</li></a>
+                    <a href=" https://3vra7mgrlh.ufs.sh/f/b8iVQa6UTCDiFlPaGulOb5lZowegLCc8WV1fuTQXmABUhvNE"><li className="list-disc list-inside">Contact Support</li></a>
+                    <a href=" https://3vra7mgrlh.ufs.sh/f/b8iVQa6UTCDikiHo3DXu6TAtl4bH3dmRqcBCgvN7MjynGhrz"><li className="list-disc list-inside">Career</li></a>
+                    <a href=" https://3vra7mgrlh.ufs.sh/f/b8iVQa6UTCDi9nGBl8jxy6eVDSCcntEPYvWZsUl438uI2poh"><li className="list-disc list-inside">FAQ's</li></a>
                   </ul>
                 </div>
                 <div className="w-full flex flex-col gap-2 justify-start items-start">
                   <p className="text-black font-bold text-2xl ">Our Policies</p>
                   <ul>
-                    <a href="https://3vra7mgrlh.ufs.sh/f/b8iVQa6UTCDiMgQPmND92nZDo7HtUT0dlfEX6cKivBQugrIV"><li className="list-disc list-inside">Terms and Conditions</li></a>
-                    <a href="https://3vra7mgrlh.ufs.sh/f/b8iVQa6UTCDiFlPfXEXOb5lZowegLCc8WV1fuTQXmABUhvNE"><li className="list-disc list-inside">Privacy Policy</li></a>
+                    <a href="https://3vra7mgrlh.ufs.sh/f/b8iVQa6UTCDiDZh0htaHs1edfE6n4JLPrBvlqxtkybQipAX9"><li className="list-disc list-inside">Terms and Conditions</li></a>
+                    <a href=" https://3vra7mgrlh.ufs.sh/f/b8iVQa6UTCDinfEtogAsJ2h95gpP4froiO6IYxwBQSM3qduW"><li className="list-disc list-inside">Privacy Policy</li></a>
                     <a href="https://3vra7mgrlh.ufs.sh/f/b8iVQa6UTCDisTXmomYxqc9mNtk4Fg6jYTEd7b2yOPUKzZQH"><li className="list-disc list-inside">Return and Refund Policy</li></a>
-                    <a href="https://3vra7mgrlh.ufs.sh/f/b8iVQa6UTCDi2DxfDp6sdKv1pxqDjelWktboUiXHuRJ09IEF"><li className="list-disc list-inside">Grievance Redressal</li></a>
+                    <a href="https://3vra7mgrlh.ufs.sh/f/b8iVQa6UTCDigmZGCFEFCh7gNvW6DfG2caHJuZzQOURlbjMw"><li className="list-disc list-inside">Shipping & Delivery policy</li></a>
+                    <a href="https://3vra7mgrlh.ufs.sh/f/b8iVQa6UTCDipWbjORHXKh7iv1Y03FeqU6Pm4AJtCZbRorWI"><li className="list-disc list-inside">Grievance Redressal</li></a>
                   </ul>
                 </div>
                 <div className="w-full flex flex-col gap-2 justify-start items-start">
                   <p className="text-black font-bold text-2xl ">Our Services</p>
                   <ul>
-                    <a href="/"><li className="list-disc list-inside">Medicine(Live) (20min
-delivery)</li></a>
+                    <li className="list-disc list-inside">Medicine (20 Min Delivery).</li>
                     {/* <a href="/"><li className="list-disc list-inside">Therapy</li></a> */}
                   </ul>
                 </div>
                 <div className="w-full flex flex-col gap-2 justify-start items-start">
                   <p className="text-black font-bold text-2xl ">Social Media</p>
                   <ul>
-                    <a href="/"><li className="list-disc list-inside">Facebook</li></a>
-                    <a href="/"><li className="list-disc list-inside">Instagram</li></a>
-                    <a href="/"><li className="list-disc list-inside">Youtube</li></a>
-                    <a href="/"><li className="list-disc list-inside">X</li></a>
-                    {/* <a href="/"><li className="list-disc list-inside">Medial</li></a> */}
+                    <a href="https://www.facebook.com/mydawaiwala/"><li className="list-disc list-inside">Facebook</li></a>
+                    <a href="https://www.instagram.com/mydawaiwala/"><li className="list-disc list-inside">Instagram</li></a>
+                    <a href=" https://www.youtube.com/@mydawaiwala"><li className="list-disc list-inside">Youtube</li></a>
+                    <a href="https://x.com/MyDawaiwala"><li className="list-disc list-inside">X</li></a>
+                    <a href="https://www.linkedin.com/company/my-dawai-wala"><li className="list-disc list-inside">LinkedIn</li></a>
+                    <a href=" https://medial.app/user/my-dawai-wala-2a2cbadfe91d9 "><li className="list-disc list-inside">Medial</li></a>
                   </ul>
                 </div>
+              </div>
+              <div>
+                <ContactInfo />
               </div>
             </div>
           </div>
@@ -77,7 +81,7 @@ delivery)</li></a>
                 <div className="flex flex-col items-center justify-between gap-2 md:flex-row md:gap-0">
                   <p>
                     &copy; {new Date().getFullYear()} My Dawai Wala. Unit of
-                    SwiftMeds Pharma. All rights reserved.
+                    SwiftMeds Pharma Pvt. Ltd. All rights reserved.
                   </p>
                   {/* <div className="animate_top mb-3 mt-3">
                     <ul className="flex items-center gap-5">
@@ -236,3 +240,60 @@ delivery)</li></a>
 };
 
 export default Footer;
+
+
+const ContactInfo = () => {
+  return (
+    <div className="rounded-lg p-6 w-full mx-auto">
+      <h2 className="text-2xl font-bold text-black mb-6">Contact Information</h2>
+      
+      <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center space-y-4">
+        {/* Phone Number */}
+        <div className="flex items-center space-x-3">
+          <div className="flex-shrink-0">
+            {/* <Phone className="h-5 w-5 text-blue-600" /> */}
+          </div>
+          <div>
+            <p className="text-sm font-medium text-gray-500">Phone</p>
+            <a 
+              href="tel:+916291495007" 
+              className="text-gray-900 hover:text-blue-600 transition-colors"
+            >
+              +91 6291495007
+            </a>
+          </div>
+        </div>
+
+        {/* Address */}
+        <div className="flex items-start space-x-3">
+          <div className="flex-shrink-0 mt-1">
+            {/* <MapPin className="h-5 w-5 text-blue-600" /> */}
+          </div>
+          <div>
+            <p className="text-sm font-medium text-gray-500">Address</p>
+            <p className="text-gray-900">
+              26/1A, Ekbalpore Road,<br />
+              Kidderpore, Kolkata 23
+            </p>
+          </div>
+        </div>
+
+        {/* Email */}
+        <div className="flex items-center space-x-3">
+          <div className="flex-shrink-0">
+            {/* <Mail className="h-5 w-5 text-blue-600" /> */}
+          </div>
+          <div>
+            <p className="text-sm font-medium text-gray-500">Email</p>
+            <a 
+              href="mailto:support@mydawaiwala.com" 
+              className="text-gray-900 hover:text-blue-600 transition-colors"
+            >
+              support@mydawaiwala.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};

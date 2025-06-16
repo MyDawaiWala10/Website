@@ -15,6 +15,7 @@ import Blog from "@/components/Blog";
 import Testimonial from "@/components/Testimonial";
 import Imagecarousel from "@/components/Crousel";
 import CalendarWidget from "@/components/CalendarWidget";
+import WhatsAppFloat from "@/components/whatsapp-float-button";
 
 export const metadata: Metadata = {
   title: "My DawaiWala",
@@ -25,7 +26,8 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
-      <CalendarWidget />
+      {/* <CalendarWidget /> */}
+      <WhatsAppFloat />
       {/* <Hero /> */}
       <Imagecarousel />
       <Brands />

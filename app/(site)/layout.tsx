@@ -10,12 +10,26 @@ import "../globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 import ToasterContext from "../context/ToastContext";
+import Providers from "./provider";
+import { getAllProducts } from "@/actions/get-all-products";
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from "@tanstack/react-query";
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery({
+    queryKey: ["gatAllProducts"],
+    queryFn: getAllProducts,
+  });
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -28,18 +42,22 @@ export default function RootLayout({
         <link rel="icon" href="/images/favicon.svg" />
       </head>
       <body className={`dark:bg-black ${inter.className}`}>
-        <ThemeProvider
-          enableSystem={false}
-          attribute="class"
-          defaultTheme="light"
-        >
-          <Lines />
-          <Header />
-          <ToasterContext />
-          {children}
-          <Footer />
-          {/* <ScrollToTop /> */}
-        </ThemeProvider>
+        <Providers>
+          {/* <HydrationBoundary state={dehydrate(queryClient)}> */}
+            <ThemeProvider
+              enableSystem={false}
+              attribute="class"
+              defaultTheme="light"
+            >
+              <Lines />
+              <Header />
+              <ToasterContext />
+              {children}
+              <Footer />
+              {/* <ScrollToTop /> */}
+            </ThemeProvider>
+          {/* </HydrationBoundary> */}
+        </Providers>
       </body>
     </html>
   );

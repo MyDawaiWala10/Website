@@ -17,33 +17,35 @@ import Imagecarousel from "@/components/Crousel";
 import CalendarWidget from "@/components/CalendarWidget";
 import WhatsAppFloat from "@/components/whatsapp-float-button";
 
+
 export const metadata: Metadata = {
   title: "My DawaiWala",
   description: "Welcome to My Dawai Wala, one stop to all your medine needs",
   // other metadata
 };
 
-export default function Home() {
+export default async function Home() {
+
   return (
-    <main>
-      {/* <CalendarWidget /> */}
-      <WhatsAppFloat />
-      {/* <Hero /> */}
-      <Imagecarousel />
-      <Brands />
-      {/* <Steps /> */}
-      <Steps />
-      <WhyUs />
-      <Categories />
-      {/* <About /> */}
-      {/* <FeaturesTab /> */}
-      {/* <Integration /> */}
-      {/* <CTA /> */}
-      {/* <FAQ /> */}
-      {/* <Testimonial /> */}
-      {/* <Pricing /> */}
-      {/* <Contact /> */}
-      {/* <Blog /> */}
-    </main>
+      <main>
+        {/* <CalendarWidget /> */}
+        <WhatsAppFloat />
+        {/* <Hero /> */}
+        <Imagecarousel />
+        <Brands />
+        {/* <Steps /> */}
+        <Steps />
+        <WhyUs />
+        <Categories />
+        {/* <About /> */}
+        {/* <FeaturesTab /> */}
+        {/* <Integration /> */}
+        {/* <CTA /> */}
+        {/* <FAQ /> */}
+        {/* <Testimonial /> */}
+        {/* <Pricing /> */}
+        {/* <Contact /> */}
+        {/* <Blog /> */}
+      </main>
   );
 }

@@ -25,6 +25,13 @@ export default function ProductDetailsPage({
       day: "numeric",
     });
   };
+  // check if medic is expired
+  if(product?.expireAt){
+    const expireDate = new Date(product?.expireAt);
+    if(expireDate < new Date()){
+      product.status = "Not Available"
+    }
+  }
 
   if (isLoading) {
     return <div className="p-8">Loading...</div>;
@@ -80,7 +87,8 @@ export default function ProductDetailsPage({
           <div className="rounded border p-4">
             <h2 className="text-2xl font-semibold">{product.name}</h2>
             {/* <p className="text-gray-500">{product.saltName}</p> */}
-            <span
+            {/* <p className="my-1 font-medium" >1 Stripe of 20 Tablet</p> */}
+            {/* <span
               className={`mt-2 inline-block rounded px-2 py-1 text-sm ${
                 product.status === "Available"
                   ? "bg-green-100 text-green-700"
@@ -88,60 +96,10 @@ export default function ProductDetailsPage({
               }`}
             >
               {product.status}
-            </span>
-            <p className="mt-4 text-gray-700">{product.description}</p>
-            <div className="mt-4 space-x-2">
-              <span className="inline-block rounded border px-2 py-1 text-sm">
-                {product.category}
-              </span>
-              <span className="inline-block rounded border px-2 py-1 text-sm">
-                {product.dosageType}
-              </span>
-            </div>
-          </div>
-
-          <div className="rounded border p-4">
-            <h3 className="mb-2 text-lg font-semibold">Pricing Details</h3>
-            <div className="space-y-1">
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-500">MRP:</span>
-                <span className="font-medium">₹{product.amount}</span>
-              </div>
-              {/* <div className="flex justify-between text-sm">
-                <span className="text-gray-500">PTR:</span>
-                <span className="font-medium">₹{product.ptr}</span>
-              </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-500">Margin:</span>
-                <span className="font-medium">{product.marginPercent}%</span>
-              </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-500">Tax Rate:</span>
-                <span className="font-medium">{product.taxRate}</span>
-              </div>
-              <hr className="my-2" />
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-500">Available Quantity:</span>
-                <span className="font-medium">{product.quantity} units</span>
-              </div> */}
-            </div>
-          </div>
-
-          {/* <div className="border rounded p-4">
-            <h3 className="text-lg font-semibold mb-2">Product Details</h3>
-            <div className="space-y-1 text-sm">
-              <div>Batch Number: <span className="font-medium">{product.batchNumber}</span></div>
-              <div>HSN Code: <span className="font-medium">{product.hsnCode}</span></div>
-              <div>Location: <span className="font-medium">{product.location}</span></div>
-              <div>Expiry Date: <span className="font-medium">{formatDate(product.expireAt)}</span></div>
-              {product.distributorName && <div>Distributor: <span className="font-medium">{product.distributorName}</span></div>}
-              {product.distributorDiscount && <div>Distributor Discount: <span className="font-medium">{product.distributorDiscount}</span></div>}
-              {product.freeProduct && <div>Free Product: <span className="font-medium">{product.freeProduct}</span></div>}
-              {product.dueDate && <div>Due Date: <span className="font-medium">{formatDate(product.dueDate)}</span></div>}
-              {product.createdAt && <div>Created: <span className="font-medium">{formatDate(product.createdAt)}</span></div>}
-            </div>
-          </div> */}
-          <div className="flex w-full justify-end">
+            </span> */}
+            <h1 className="text-4xl my-5" >₹{product.amount}</h1>
+            {/* whatsapp buttonn */}
+             <div className="flex w-full justify-start my-5">
             <a href="https://wa.link/oprl2e">
               <button className="inline-flex items-center justify-center gap-2 rounded-full bg-[#12a701] px-5 py-2 dark:border">
                 <span className="text-sm font-medium text-white dark:text-white">
@@ -192,8 +150,72 @@ export default function ProductDetailsPage({
               </button>
             </a>
           </div>
+            <p className="mt-4 text-gray-700">{product.description}</p>
+            <div className="mt-4 space-x-2 flex items-center justify-between">
+              <div className="flex items-center" >
+                <span className="inline-block rounded border px-2 py-1 text-sm mr-3">
+                  {product.category}
+                </span>
+                <span className="inline-block rounded border px-2 py-1 text-sm">
+                  {product.dosageType}
+                </span>
+              </div>
+              <span
+                className={`mt-2 inline-block rounded px-2 py-1 text-sm ${product.status === "Available"
+                  ? "bg-green-100 text-green-700"
+                  : "bg-red-100 text-red-700"
+                  }`}
+              >
+                {product.status}
+              </span>
+            </div>
+          </div>
+
+          {/* <div className="rounded border p-4">
+            <h3 className="mb-2 text-lg font-semibold">Pricing Details</h3>
+            <div className="space-y-1">
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-500">MRP:</span>
+                <span className="font-medium">₹{product.amount}</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-500">PTR:</span>
+                <span className="font-medium">₹{product.ptr}</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-500">Margin:</span>
+                <span className="font-medium">{product.marginPercent}%</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-500">Tax Rate:</span>
+                <span className="font-medium">{product.taxRate}</span>
+              </div>
+              <hr className="my-2" />
+              <div className="flex justify-between text-sm">
+                <span className="text-gray-500">Available Quantity:</span>
+                <span className="font-medium">{product.quantity} units</span>
+              </div>
+            </div>
+          </div> */}
+
+          {/* <div className="border rounded p-4">
+            <h3 className="text-lg font-semibold mb-2">Product Details</h3>
+            <div className="space-y-1 text-sm">
+              <div>Batch Number: <span className="font-medium">{product.batchNumber}</span></div>
+              <div>HSN Code: <span className="font-medium">{product.hsnCode}</span></div>
+              <div>Location: <span className="font-medium">{product.location}</span></div>
+              <div>Expiry Date: <span className="font-medium">{formatDate(product.expireAt)}</span></div>
+              {product.distributorName && <div>Distributor: <span className="font-medium">{product.distributorName}</span></div>}
+              {product.distributorDiscount && <div>Distributor Discount: <span className="font-medium">{product.distributorDiscount}</span></div>}
+              {product.freeProduct && <div>Free Product: <span className="font-medium">{product.freeProduct}</span></div>}
+              {product.dueDate && <div>Due Date: <span className="font-medium">{formatDate(product.dueDate)}</span></div>}
+              {product.createdAt && <div>Created: <span className="font-medium">{formatDate(product.createdAt)}</span></div>}
+            </div>
+          </div> */}
+
+         
         </div>
       </div>
-    </div>
+    </div >
   );
 }

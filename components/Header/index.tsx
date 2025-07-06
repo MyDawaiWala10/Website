@@ -43,13 +43,13 @@ const Header = () => {
       }`}
     >
       {/* <SearchComponent /> */}
-      <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
-        <div className="flex w-full items-center justify-between gap-5 xl:w-2/5 xl:justify-start">
+      <div className="relative  mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
+        <div className="flex w-full items-center justify-between gap-5 xl:w-1/5 xl:justify-start">
           <a className="w-1/2 md:w-11/12" href="/">
             <img src="/images/logo/mdw-logo.svg" alt="logo" className="w-24 md:w-28" />
           </a>
 
-          <div
+          {/* <div
             className="hidden w-full cursor-pointer xl:flex xl:items-center xl:justify-center"
             onClick={handleLocation}
           >
@@ -74,7 +74,7 @@ const Header = () => {
                 ></path>{" "}
               </g>
             </svg>
-          </div>
+          </div> */}
 
           {/* <!-- Hamburger Toggle BTN --> */}
           <button
@@ -172,7 +172,7 @@ const Header = () => {
               ))}
             </ul>
           </nav> */}
-          <div className=" lg:w-10/12">
+          <div className="lg:w-10/12">
             {/* <Search /> */}
             <SearchComponent />
           </div>

@@ -85,14 +85,14 @@ export const SearchComponent: React.FC<SearchComponentProps> = ({
     <div ref={searchRef} className={`relative w-full max-w-3xl ${className}`}>
       <form onSubmit={handleSubmit} className="relative">
         <div className="w-full">
-          <div className="mx-auto w-full  rounded-full border-2">
+          <div className={` mx-auto w-full border-2  rounded-full`}>
             <div className="relative flex h-10 w-full items-center overflow-hidden rounded-full bg-white focus-within:shadow-lg">
-              <div className="grid h-full w-12 place-items-center text-gray-300">
+              <div className={` grid h-full w-12 place-items-center text-gray-300`}>
                 <Search />
               </div>
 
               <input
-                className="peer h-full w-full pr-2 text-sm text-gray-700 outline-none px-8"
+                className={` peer h-full md:w-full pr-2 text-sm text-gray-700 outline-none px-8`}
                 type="text"
                 placeholder={placeholder}
                 value={query}

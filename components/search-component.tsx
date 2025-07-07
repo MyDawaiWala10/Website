@@ -18,6 +18,7 @@ export const SearchComponent: React.FC<SearchComponentProps> = ({
   const [filteredProducts, setFilteredProducts] = useState<ProductDataType[]>(
     [],
   );
+  const [openSearchbar,setopenSearchbar] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
@@ -85,14 +86,14 @@ export const SearchComponent: React.FC<SearchComponentProps> = ({
     <div ref={searchRef} className={`relative w-full max-w-3xl ${className}`}>
       <form onSubmit={handleSubmit} className="relative">
         <div className="w-full">
-          <div className={` mx-auto w-full border-2  rounded-full`}>
-            <div className="relative flex h-10 w-full items-center overflow-hidden rounded-full bg-white focus-within:shadow-lg">
-              <div className={` grid h-full w-12 place-items-center text-gray-300`}>
+          <div className={`${openSearchbar ? "w-full":"w-[55px]"} mx-auto lg:w-full border-2  rounded-full`}>
+            <div className={` relative flex h-10 lg:w-full items-center overflow-hidden rounded-full bg-white focus-within:shadow-lg`}>
+              <div onClick={()=>setopenSearchbar(!openSearchbar)} className={` grid h-full w-8 ml-2 place-items-center text-gray-300`}>
                 <Search />
               </div>
 
               <input
-                className={` peer h-full md:w-full pr-2 text-sm text-gray-700 outline-none px-8`}
+                className={`${openSearchbar?"w-full transform duration-150 ":"hidden"} peer h-full lg:w-full lg:block pr-2 text-sm text-gray-700 outline-none px-8`}
                 type="text"
                 placeholder={placeholder}
                 value={query}

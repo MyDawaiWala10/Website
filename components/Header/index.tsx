@@ -15,7 +15,6 @@ const Header = () => {
   const [dropdownToggler, setDropdownToggler] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [openSearchbar,setopenSearchbar] = useState(false);
 
   const handleLocation = () => {
     setIsVisible(!isVisible);
@@ -78,8 +77,7 @@ const Header = () => {
           </div> */}
           <div className="w-[50%] sm:w-[70%] xl:hidden flex ">
             {/* <Search /> */}
-            <SearchIcon onClick={()=>setopenSearchbar(!openSearchbar)} className={`${openSearchbar ? "hidden":"border-2 rounded-full"} w-10 h-10 p-2 lg:hidden `} />
-            { openSearchbar && <SearchComponent />}
+            <SearchComponent />
           </div>
           <a href="https://wa.link/oprl2e" className="w-[100px] flex items-center justify-center h-10 text-[2.5vw] p-3 rounded-full text-white bg-[#12a701] xl:hidden" >
             Order
@@ -120,8 +118,8 @@ const Header = () => {
               </span>
             </span>
           </button> */}
-        </div> 
-          {/* <!-- Hamburger Toggle BTN --> */}
+        </div>
+        {/* <!-- Hamburger Toggle BTN --> */}
 
 
         {/* Nav Menu Start   */}
@@ -178,11 +176,11 @@ const Header = () => {
               ))}
             </ul>
           </nav> */}
-           <div className="w-[80%]">
+          <div className="w-[80%]">
             {/* <Search /> */}
             <SearchComponent />
           </div>
-           
+
           <div className="mt-7 flex items-center justify-center gap-6 xl:mt-0">
             {/* <ThemeToggler /> */}
             <a href="https://wa.link/oprl2e">

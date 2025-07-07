@@ -8,12 +8,14 @@ import Search from "../Search";
 import Location from "../Location";
 import { useGetAllProducts } from "@/data/get-all-product";
 import { SearchComponent } from "../search-component";
+import { SearchIcon } from "lucide-react";
 
 const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false);
   const [dropdownToggler, setDropdownToggler] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [openSearchbar,setopenSearchbar] = useState(false);
 
   const handleLocation = () => {
     setIsVisible(!isVisible);
@@ -74,13 +76,14 @@ const Header = () => {
               </g>
             </svg>
           </div> */}
-          <div className="w-[50%] sm:w-[70%] xl:hidden">
+          <div className="w-[50%] sm:w-[70%] xl:hidden flex ">
             {/* <Search /> */}
-            <SearchComponent />
+            <SearchIcon onClick={()=>setopenSearchbar(!openSearchbar)} className={`${openSearchbar ? "hidden":"border-2 rounded-full"} w-10 h-10 p-2 lg:hidden `} />
+            { openSearchbar && <SearchComponent />}
           </div>
-          <button className="w-[15vw] h-10 text-[1rem] rounded-full text-white bg-[#12a701] xl:hidden" >
+          <a href="https://wa.link/oprl2e" className="w-[100px] flex items-center justify-center h-10 text-[2.5vw] p-3 rounded-full text-white bg-[#12a701] xl:hidden" >
             Order
-          </button>
+          </a>
 
           {/* <!-- Hamburger Toggle BTN --> */}
 

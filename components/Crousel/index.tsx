@@ -66,6 +66,18 @@ export default function Imagecarousel() {
               className="block md:hidden"
             />
           </SplideSlide>
+          <SplideSlide>
+          <img
+              src="../../images/crousel-images/55.png"
+              alt="Image 33"
+              className="hidden md:block"
+            />
+            <img
+              src="../../images/crousel-images/5.png"
+              alt="Image 3"
+              className="block md:hidden"
+            />
+          </SplideSlide>
         </Splide>
       </div>
     </div>

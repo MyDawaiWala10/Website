@@ -74,11 +74,11 @@ const Header = () => {
               </g>
             </svg>
           </div> */}
-          <div className="w-[70%] xl:hidden">
+          <div className="w-[50%] sm:w-[70%] xl:hidden">
             {/* <Search /> */}
             <SearchComponent />
           </div>
-          <button className="w-30 h-10  rounded-full text-white bg-[#12a701] xl:hidden" >
+          <button className="w-[15vw] h-10 text-[1rem] rounded-full text-white bg-[#12a701] xl:hidden" >
             Order
           </button>
 

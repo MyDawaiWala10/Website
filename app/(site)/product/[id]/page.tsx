@@ -31,7 +31,6 @@ if (product?.expireAt) {
   const expireDate = new Date(`${year}-${month}-01`);
 
   const today = new Date();
-  // Set today to the first of the month for a fair month-year comparison
   today.setDate(1);
   today.setHours(0, 0, 0, 0);
 

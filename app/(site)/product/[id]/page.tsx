@@ -26,8 +26,12 @@ export default function ProductDetailsPage({
     });
   };
   // check if medic is expired
-  const expireDate = product?.expireAt !== undefined ? new Date(product.expireAt) : undefined;
-
+  if(product?.expireAt){
+    const expireDate = new Date(product?.expireAt);
+    if(expireDate < new Date()){
+      product.status = "Not Available"
+    }
+  }
 
 
   if (error || !product) {
@@ -48,18 +52,6 @@ export default function ProductDetailsPage({
         </div>
       </div>
     );
-  }
-
-  if (expireDate! < new Date()) {
-    return (
-      <>
-        <div className="w-full h-full text-center" >
-          <h1 className="text-6xl" >
-            Product expired
-          </h1>
-        </div>
-      </>
-    )
   }
 
   return (

@@ -76,7 +76,7 @@ const Header = () => {
               </g>
             </svg>
           </div> */}
-          <SearchIcon onClick={()=>setopenSearchbar(!openSearchbar)} className={`${openSearchbar ? "bg-[#12a701] stroke-white":"bg-none"} border-2 rounded-full w-12 h-10 px-2 py-1`} />
+          <SearchIcon onClick={()=>setopenSearchbar(!openSearchbar)} className={`${openSearchbar ? "bg-[#12a701] stroke-white":"bg-none"} border-2 xl:hidden rounded-full w-12 h-10 px-2 py-1`} />
           <a href="https://wa.link/oprl2e" className="w-[100px] flex items-center justify-center h-10 text-[2.5vw] p-3 rounded-full text-white bg-[#12a701] xl:hidden" >
             Order
           </a>

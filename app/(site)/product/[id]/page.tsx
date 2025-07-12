@@ -26,19 +26,19 @@ export default function ProductDetailsPage({
     });
   };
   // check if medic is expired
-if (product?.expireAt) {
-  const [month, year] = product.expireAt.split("-");
-  const expireDate = new Date(`${year}-${month}-01`);
+  if (product?.expireAt) {
+    const [month, year] = product.expireAt.split("-");
+    const expireDate = new Date(`${year}-${month}-01`);
 
-  const today = new Date();
-  today.setDate(1);
-  today.setHours(0, 0, 0, 0);
+    const today = new Date();
+    today.setDate(1);
+    today.setHours(0, 0, 0, 0);
 
-  if (expireDate < today) {
-    product.status = "Not Available";
-    console.log(product.status);
+    if (expireDate < today) {
+      product.status = "Not Available";
+      console.log(product.status);
+    }
   }
-}
 
 
 
@@ -70,7 +70,7 @@ if (product?.expireAt) {
       >
         &larr; Back
       </button>
-     {/* <h1 className="text-4xl block md:hidden my-5 border rounded-md p-2" >₹{product.amount}</h1> */}
+      {/* <h1 className="text-4xl block md:hidden my-5 border rounded-md p-2" >₹{product.amount}</h1> */}
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Product Image */}
         <div className="rounded border p-4">
@@ -90,7 +90,17 @@ if (product?.expireAt) {
         {/* Product Info */}
         <div className="flex flex-col gap-6">
           <div className="rounded border p-4">
-            <h2 className="text-2xl font-semibold">{product.name}</h2>
+            <div className="flex items-center justify-between" >
+              <h2 className="text-2xl font-semibold">{product.name}</h2>
+              <span
+                className={`mt-2 inline-block rounded px-2 py-1 text-sm ${product.status === "Available"
+                  ? "bg-green-100 text-green-700"
+                  : "bg-red-100 text-red-700"
+                  }`}
+              >
+                {product.status}
+              </span>
+            </div>
             {/* <p className="text-gray-500">{product.saltName}</p> */}
             {/* <p className="my-1 font-medium" >1 Stripe of 20 Tablet</p> */}
             {/* <span
@@ -103,6 +113,7 @@ if (product?.expireAt) {
               {product.status}
             </span> */}
             <h1 className="text-2xl md:text-4xl block my-5" >₹{product.amount}</h1>
+
             {/* whatsapp buttonn */}
             <div className="flex w-full justify-start my-5">
               <a href="https://wa.link/oprl2e">
@@ -165,14 +176,7 @@ if (product?.expireAt) {
                   {product.dosageType}
                 </span>
               </div>
-              <span
-                className={`mt-2 inline-block rounded px-2 py-1 text-sm ${product.status === "Available"
-                  ? "bg-green-100 text-green-700"
-                  : "bg-red-100 text-red-700"
-                  }`}
-              >
-                {product.status}
-              </span>
+
             </div>
           </div>
 

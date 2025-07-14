@@ -92,18 +92,18 @@ export default function ProductDetailsPage({
           <div className="rounded border p-4">
             <div className="flex items-center justify-between" >
               <h2 className="text-2xl font-semibold">{product.name}</h2>
-              <div>
+              <div className="flex flex-col " >
                 <span
-                  className={`mt-2 inline-block rounded px-2 py-1 text-sm ${product.status === "Available"
+                  className={`mt-2 inline-block rounded px-2 text-center py-1 text-sm ${product.status === "Available"
                     ? "bg-green-100 text-green-700"
                     : "bg-red-100 text-red-700"
                     }`}
                 >
                   {product.status}
                 </span>
-                <span className="text-sm text-blue-700 px-2 py-1 rounded bg-blue-100 ml-2" >
+                <span className="text-sm w-full text-blue-700 px-2 py-1 rounded bg-blue-100  mt-2" >
                   Prescription Needed
-                </span>
+                </span> 
               </div>
             </div>
             {/* <p className="text-gray-500">{product.saltName}</p> */}

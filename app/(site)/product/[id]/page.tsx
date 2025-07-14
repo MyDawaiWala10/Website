@@ -92,19 +92,7 @@ export default function ProductDetailsPage({
           <div className="rounded border p-4">
             <div className="flex items-center justify-between" >
               <h2 className="text-2xl font-semibold">{product.name}</h2>
-              <div className="flex flex-col " >
-                <span
-                  className={`mt-2 inline-block rounded px-2 text-center py-1 text-sm ${product.status === "Available"
-                    ? "bg-green-100 text-green-700"
-                    : "bg-red-100 text-red-700"
-                    }`}
-                >
-                  {product.status}
-                </span>
-                <span className="text-sm w-full text-blue-700 px-2 py-1 rounded bg-blue-100  mt-2" >
-                  Prescription Needed
-                </span> 
-              </div>
+              
             </div>
             {/* <p className="text-gray-500">{product.saltName}</p> */}
             {/* <p className="my-1 font-medium" >1 Stripe of 20 Tablet</p> */}
@@ -117,8 +105,20 @@ export default function ProductDetailsPage({
             >
               {product.status}
             </span> */}
-            <h1 className="text-2xl md:text-4xl block my-5" >₹{product.amount}</h1>
-
+            <h1 className="text-2xl md:text-4xl block mt-5 mb-2" >₹{product.amount}</h1>
+            <div>
+                <span
+                  className={`mt-2 inline-block rounded px-2 text-center py-1 text-sm ${product.status === "Available"
+                    ? "bg-green-100 text-green-700"
+                    : "bg-red-100 text-red-700"
+                    }`}
+                >
+                  {product.status}
+                </span>
+                <span className="text-sm w-full text-blue-700 px-2 py-1 rounded bg-blue-100  mt-2 ml-2" >
+                  Prescription Needed
+                </span> 
+              </div>
             {/* whatsapp buttonn */}
             <div className="flex w-full justify-start my-5">
               <a href="https://wa.link/oprl2e">

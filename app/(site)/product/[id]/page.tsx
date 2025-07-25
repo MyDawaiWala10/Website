@@ -13,8 +13,8 @@ export default function ProductDetailsPage({
   const router = useRouter();
   const productId = searchParams.get("id");
 
-  const { data: products = [], isLoading, error } = useGetAllProducts();
-  const product = products.find((p) => p.productId === params.id);
+const { data, isLoading, error } = useGetAllProducts();
+const product = data?.data?.find((p) => p.productId === params.id);
 
   // console.log(product, products, productId);
 
@@ -26,8 +26,8 @@ export default function ProductDetailsPage({
     });
   };
   // check if medic is expired
-  if(product?.expireAt){
-    const expireDate = new Date(product?.expireAt);
+  if(product?.nearestExpiry){
+    const expireDate = new Date(product?.nearestExpiry);
     if(expireDate < new Date()){
       product.status = "Not Available"
     }
@@ -97,7 +97,7 @@ export default function ProductDetailsPage({
             >
               {product.status}
             </span> */}
-            <h1 className="text-4xl my-5" >₹{product.amount}</h1>
+            <h1 className="text-4xl my-5" >₹{product?.batches[0]?.ptr ?? 0}</h1>
             {/* whatsapp buttonn */}
              <div className="flex w-full justify-start my-5">
             <a href="https://wa.link/oprl2e">

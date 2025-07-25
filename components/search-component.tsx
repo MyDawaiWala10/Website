@@ -3,6 +3,7 @@ import { Search, X, Package } from "lucide-react";
 import { useGetAllProducts } from "@/data/get-all-product";
 import { ProductDataType } from "@/schema";
 import { useRouter } from "next/navigation";
+import { ProductType } from "@/actions/get-all-products";
 
 interface SearchComponentProps {
   placeholder?: string;
@@ -15,13 +16,16 @@ export const SearchComponent: React.FC<SearchComponentProps> = ({
 }) => {
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  const [filteredProducts, setFilteredProducts] = useState<ProductDataType[]>(
+  const [filteredProducts, setFilteredProducts] = useState<ProductType[]>(
     [],
   );
   const searchRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
-  const { data: products = [], isLoading, error } = useGetAllProducts();
+  const { data, isLoading, error } = useGetAllProducts();
+  const products = data?.data;
+
+
 
   // Filter products based on search query
   useEffect(() => {
@@ -31,19 +35,18 @@ export const SearchComponent: React.FC<SearchComponentProps> = ({
       return;
     }
 
-    const filtered = products.filter((product) => {
+    const filtered = products?.filter((product) => {
       const searchTerm = query.toLowerCase();
       return (
         product.name.toLowerCase().includes(searchTerm) ||
         product.description.toLowerCase().includes(searchTerm) ||
         product.saltName.toLowerCase().includes(searchTerm) ||
         product.category.toLowerCase().includes(searchTerm) ||
-        product.dosageType.toLowerCase().includes(searchTerm) ||
-        product.batchNumber.toLowerCase().includes(searchTerm)
+        product.dosageType.toLowerCase().includes(searchTerm)
+        // product.batches[0].batchNumber.toLowerCase().includes(searchTerm)
       );
-    });
-
-    setFilteredProducts(filtered.slice(0, 8)); // Limit to 8 suggestions
+    }) ?? [];
+    setFilteredProducts(filtered.slice(0, 8));
     setIsOpen(filtered.length > 0);
   }, [query, products]);
 
@@ -62,7 +65,7 @@ export const SearchComponent: React.FC<SearchComponentProps> = ({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleProductSelect = (product: ProductDataType) => {
+  const handleProductSelect = (product: ProductType) => {
     setQuery(product.name);
     setIsOpen(false);
     router.push(`/product/${product.productId}`);
@@ -171,7 +174,7 @@ export const SearchComponent: React.FC<SearchComponentProps> = ({
                           <span>•</span>
                           <span>{product.dosageType}</span>
                           <span>•</span>
-                          <span>₹{product.amount}</span>
+                          <span>₹{product?.batches[0]?.ptr ?? 0}</span>
                         </div>
                       </div>
                     </div>

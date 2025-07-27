@@ -26,8 +26,8 @@ const product = data?.data?.find((p) => p.productId === params.id);
     });
   };
 
-  if (product?.expireAt) {
-    const [month, year] = product.expireAt.split("-");
+  if (product?.nearestExpiry) {
+    const [month, year] = product.nearestExpiry.split("-");
     const expireDate = new Date(`${year}-${month}-01`);
 
     const today = new Date();

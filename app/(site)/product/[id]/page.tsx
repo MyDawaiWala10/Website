@@ -25,17 +25,22 @@ const product = data?.data?.find((p) => p.productId === params.id);
       day: "numeric",
     });
   };
-  // check if medic is expired
-  if(product?.nearestExpiry){
-    const expireDate = new Date(product?.nearestExpiry);
-    if(expireDate < new Date()){
-      product.status = "Not Available"
+
+  if (product?.expireAt) {
+    const [month, year] = product.expireAt.split("-");
+    const expireDate = new Date(`${year}-${month}-01`);
+
+    const today = new Date();
+    today.setDate(1);
+    today.setHours(0, 0, 0, 0);
+
+    if (expireDate < today) {
+      product.status = "Not Available";
+      console.log(product.status);
     }
   }
 
-  if (isLoading) {
-    return <div className="p-8">Loading...</div>;
-  }
+
 
   if (error || !product) {
     return (
@@ -65,7 +70,7 @@ const product = data?.data?.find((p) => p.productId === params.id);
       >
         &larr; Back
       </button>
-
+      {/* <h1 className="text-4xl block md:hidden my-5 border rounded-md p-2" >₹{product.amount}</h1> */}
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Product Image */}
         <div className="rounded border p-4">
@@ -85,7 +90,10 @@ const product = data?.data?.find((p) => p.productId === params.id);
         {/* Product Info */}
         <div className="flex flex-col gap-6">
           <div className="rounded border p-4">
-            <h2 className="text-2xl font-semibold">{product.name}</h2>
+            <div className="flex items-center justify-between" >
+              <h2 className="text-2xl font-semibold">{product.name}</h2>
+              
+            </div>
             {/* <p className="text-gray-500">{product.saltName}</p> */}
             {/* <p className="my-1 font-medium" >1 Stripe of 20 Tablet</p> */}
             {/* <span
@@ -150,6 +158,7 @@ const product = data?.data?.find((p) => p.productId === params.id);
               </button>
             </a>
           </div>
+
             <p className="mt-4 text-gray-700">{product.description}</p>
             <div className="mt-4 space-x-2 flex items-center justify-between">
               <div className="flex items-center" >
@@ -212,8 +221,6 @@ const product = data?.data?.find((p) => p.productId === params.id);
               {product.createdAt && <div>Created: <span className="font-medium">{formatDate(product.createdAt)}</span></div>}
             </div>
           </div> */}
-
-         
         </div>
       </div>
     </div >

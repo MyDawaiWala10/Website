@@ -8,12 +8,14 @@ import Search from "../Search";
 import Location from "../Location";
 import { useGetAllProducts } from "@/data/get-all-product";
 import { SearchComponent } from "../search-component";
+import {  SearchIcon } from "lucide-react";
 
 const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false);
   const [dropdownToggler, setDropdownToggler] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [openSearchbar,setopenSearchbar] = useState(false);
 
   const handleLocation = () => {
     setIsVisible(!isVisible);
@@ -36,11 +38,10 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-99999 w-full py-4 ${
-        stickyMenu
-          ? "bg-white !py-4 shadow transition duration-100 dark:bg-black"
-          : ""
-      }`}
+      className={`fixed left-0 top-0 z-99999 w-full py-4 ${stickyMenu
+        ? "bg-white !py-4 shadow transition duration-100 dark:bg-black"
+        : ""
+        }`}
     >
       {/* <SearchComponent /> */}
       <div className="relative  mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
@@ -75,9 +76,15 @@ const Header = () => {
               </g>
             </svg>
           </div> */}
+          <SearchIcon onClick={()=>setopenSearchbar(!openSearchbar)} className={`${openSearchbar ? "bg-[#12a701] stroke-white":"bg-none"} border-2 xl:hidden rounded-full w-12 h-10 px-2 py-1`} />
+          <a href="https://wa.link/oprl2e" className="w-[100px] flex items-center justify-center h-10 text-[2.5vw] p-3 rounded-full text-white bg-[#12a701] xl:hidden" >
+            Order
+          </a>
 
           {/* <!-- Hamburger Toggle BTN --> */}
-          <button
+
+
+          {/* <button
             aria-label="hamburger Toggler"
             className="block xl:hidden"
             onClick={() => setNavigationOpen(!navigationOpen)}
@@ -85,44 +92,43 @@ const Header = () => {
             <span className="relative block h-5.5 w-5.5 cursor-pointer">
               <span className="absolute right-0 block h-full w-full">
                 <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-[0] duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "!w-full delay-300" : "w-0"
-                  }`}
+                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-[0] duration-200 ease-in-out dark:bg-white ${!navigationOpen ? "!w-full delay-300" : "w-0"
+                    }`}
                 ></span>
                 <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-150 duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "delay-400 !w-full" : "w-0"
-                  }`}
+                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-150 duration-200 ease-in-out dark:bg-white ${!navigationOpen ? "delay-400 !w-full" : "w-0"
+                    }`}
                 ></span>
                 <span
-                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-200 duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "!w-full delay-500" : "w-0"
-                  }`}
+                  className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-black delay-200 duration-200 ease-in-out dark:bg-white ${!navigationOpen ? "!w-full delay-500" : "w-0"
+                    }`}
                 ></span>
               </span>
               <span className="du-block absolute right-0 h-full w-full rotate-45">
                 <span
-                  className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-black delay-300 duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "!h-0 delay-[0]" : "h-full"
-                  }`}
+                  className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-black delay-300 duration-200 ease-in-out dark:bg-white ${!navigationOpen ? "!h-0 delay-[0]" : "h-full"
+                    }`}
                 ></span>
                 <span
-                  className={`delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-black duration-200 ease-in-out dark:bg-white ${
-                    !navigationOpen ? "!h-0 delay-200" : "h-0.5"
-                  }`}
+                  className={`delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-black duration-200 ease-in-out dark:bg-white ${!navigationOpen ? "!h-0 delay-200" : "h-0.5"
+                    }`}
                 ></span>
               </span>
             </span>
-          </button>
-          {/* <!-- Hamburger Toggle BTN --> */}
+          </button> */}
         </div>
+        {/* <!-- Hamburger Toggle BTN --> */}
 
+         {openSearchbar && <div className="w-full xl:hidden mt-3 ">
+            {/* <Search /> */}
+            <SearchComponent />
+          </div>
+}
         {/* Nav Menu Start   */}
         <div
-          className={`invisible h-0 w-full items-center justify-end gap-3 xl:visible xl:flex xl:h-auto xl:w-full ${
-            navigationOpen &&
+          className={`invisible h-0 w-full items-center justify-end gap-3 xl:visible xl:flex xl:h-auto xl:w-full ${navigationOpen &&
             "navbar !visible mt-4 h-auto max-h-[400px] rounded-md bg-white p-7.5 shadow-solid-5 dark:bg-blacksection xl:h-auto xl:p-0 xl:shadow-none xl:dark:bg-transparent"
-          }`}
+            }`}
         >
           {/* <nav>
             <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-10">
@@ -172,7 +178,7 @@ const Header = () => {
               ))}
             </ul>
           </nav> */}
-          <div className="lg:w-10/12">
+          <div className="w-[80%]">
             {/* <Search /> */}
             <SearchComponent />
           </div>

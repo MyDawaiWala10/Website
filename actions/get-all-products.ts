@@ -1,15 +1,48 @@
-// "use server"
-
 import { ProductDataType } from "@/schema";
 import { RequestInit } from "next/dist/server/web/spec-extension/request";
+type Batch = {
+    batchNumber: string;
+    quantity: number;
+    ptr: number;
+    expireAt: string; // ISO date string (e.g. "2027-03-01")
+    formattedExpireAt: string;
+}
+export type ProductType = {
+  _id: string;
+  productId: string;
+  name: string;
+  description: string;
+  productImage: string;
+  status: "Available" | "Not Available";
+  category:
+  | "Ayurvedic"
+  | "Charges"
+  | "Cosmetic"
+  | "Drug"
+  | "Generic"
+  | "Nutraceuticals"
+  | "OTC"
+  | "None";
+  dosageType: "Tablet" | "Capsule" | "Cream" | "Syrup" | "Drop" | "Injection" | "Powder" | "Oint" | "INH" | "Soap" | "None" | "Gel" | "Rota Caps";
+  marginPercent: number;
+  hsnCode: string;
+  taxRate: string;
+  saltName: string;
+  location: string;
+  batches:Batch[] ,
+  totalQuantity: number;
+  createdAt: string; 
+  updatedAt: string; 
+  nearestExpiry: string;
+};
 
-const base_url = process.env.BACKEND_BASE_URL
+type productType = {
+    status: boolean;
+    count: number;
+    data: ProductType[];
+};
 
-// https://backend-2ske.onrender.com
-
-
-export const getAllProducts = async (): Promise<ProductDataType[]> => {
-  // 'use server'
+export const getAllProducts = async (): Promise<productType> => {
     const options: RequestInit = {
         method: "GET",
         headers: {
@@ -20,12 +53,10 @@ export const getAllProducts = async (): Promise<ProductDataType[]> => {
 
     try {
         const response = await fetch(`https://backend-2ske.onrender.com/product/getallproducts`, options);
-        // const response = await fetch(`${base_url}/product/getallproducts`, options);
-        const data = response.json()
-        // console.log("fetchinggg", data, response.status)
+        const data: productType = await response.json();
         return data;
     } catch (err) {
         console.error(err);
-        return [] as ProductDataType[]; // Need fixing here maybe, idk, error returning or something maybe
-}
+        return { status: false, count: 0, data: [] as ProductType[] }; 
+    }
 };

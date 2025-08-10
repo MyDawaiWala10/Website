@@ -15,7 +15,7 @@ export default function ProductDetailsPage({
 
 const { data, isLoading, error } = useGetAllProducts();
 const product = data?.data?.find((p) => p.productId === params.id);
-const mrp = ((product?.batches[0]?.amount || 0) / (product?.batches[0]?.quantity || 1));
+const mrp = ((product?.batches[0]?.amount || 0) / (product?.batches[0]?.quantity || 1)).toFixed(2);
   // console.log(product, products, productId);
 
   const formatDate = (dateString) => {

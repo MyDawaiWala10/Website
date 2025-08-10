@@ -6,6 +6,7 @@ type Batch = {
     ptr: number;
     expireAt: string; // ISO date string (e.g. "2027-03-01")
     formattedExpireAt: string;
+    amount:number
 }
 export type ProductType = {
   _id: string;

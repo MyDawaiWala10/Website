@@ -174,7 +174,7 @@ export const SearchComponent: React.FC<SearchComponentProps> = ({
                           <span>•</span>
                           <span>{product.dosageType}</span>
                           <span>•</span>
-                          <span>₹{product?.batches[0]?.ptr ?? 0}</span>
+                          <span>₹{((product?.batches[0]?.amount || 0) / (product?.batches[0]?.quantity || 1))}</span>
                         </div>
                       </div>
                     </div>

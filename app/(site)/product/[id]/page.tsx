@@ -15,7 +15,7 @@ export default function ProductDetailsPage({
 
 const { data, isLoading, error } = useGetAllProducts();
 const product = data?.data?.find((p) => p.productId === params.id);
-
+const mrp = ((product?.batches[0]?.amount || 0) / (product?.batches[0]?.quantity || 1));
   // console.log(product, products, productId);
 
   const formatDate = (dateString) => {
@@ -36,7 +36,6 @@ const product = data?.data?.find((p) => p.productId === params.id);
 
     if (expireDate < today) {
       product.status = "Not Available";
-      console.log(product.status);
     }
   }
 
@@ -105,7 +104,7 @@ const product = data?.data?.find((p) => p.productId === params.id);
             >
               {product.status}
             </span> */}
-            <h1 className="text-4xl my-5" >₹{product?.batches[0]?.ptr ?? 0}</h1>
+            <h1 className="text-4xl my-5" >₹{mrp ?? 0}</h1>
             {/* whatsapp buttonn */}
              <div className="flex w-full justify-start my-5">
             <a href="https://wa.link/oprl2e">

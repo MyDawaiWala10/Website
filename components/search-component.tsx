@@ -38,11 +38,11 @@ export const SearchComponent: React.FC<SearchComponentProps> = ({
     const filtered = products?.filter((product) => {
       const searchTerm = query.toLowerCase();
       return (
-        product.name.toLowerCase().includes(searchTerm) ||
-        product.description.toLowerCase().includes(searchTerm) ||
-        product.saltName.toLowerCase().includes(searchTerm) ||
-        product.category.toLowerCase().includes(searchTerm) ||
-        product.dosageType.toLowerCase().includes(searchTerm)
+        product.name.toLowerCase().startsWith(searchTerm) 
+        // product.description.toLowerCase().includes(searchTerm) ||
+        // product.saltName.toLowerCase().includes(searchTerm) ||
+        // product.category.toLowerCase().includes(searchTerm) ||
+        // product.dosageType.toLowerCase().includes(searchTerm)
         // product.batches[0].batchNumber.toLowerCase().includes(searchTerm)
       );
     }) ?? [];
@@ -174,7 +174,7 @@ export const SearchComponent: React.FC<SearchComponentProps> = ({
                           <span>•</span>
                           <span>{product.dosageType}</span>
                           <span>•</span>
-                          <span>₹{((product?.batches[0]?.amount || 0) / (product?.batches[0]?.quantity || 1)).toFixed(2)}</span>
+                          <span>₹{((product?.batches[0]?.amount)).toFixed(2)}</span>
                         </div>
                       </div>
                     </div>

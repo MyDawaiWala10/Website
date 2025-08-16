@@ -15,7 +15,8 @@ export default function ProductDetailsPage({
 
 const { data, isLoading, error } = useGetAllProducts();
 const product = data?.data?.find((p) => p.productId === params.id);
-const mrp = ((product?.batches[0]?.amount || 0) / (product?.batches[0]?.quantity || 1)).toFixed(2);
+const calculatedMrp = product?.batches[0].mrp === undefined ? ((product?.batches[0]?.amount || 0) / (product?.batches[0]?.quantity || 1)).toFixed(2) : product.batches[0].mrp
+const mrp =( Number(calculatedMrp) < product?.batches[0].ptr! )? product?.batches[0].amount : Number(calculatedMrp);
   // console.log(product, products, productId);
 
   const formatDate = (dateString) => {
